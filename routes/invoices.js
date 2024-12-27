@@ -6,11 +6,12 @@ const completedPayment = require("../controllers/invoice/completedPayment");
 const cancelPayment = require("../controllers/invoice/cancelPayment");
 const getPendingInvoice = require("../controllers/invoice/getPendingInvoice");
 const validationMiddleware = require("../middlewares/validation.middleware");
-const createInvoiceSchemaValidator = require("../controllers/src/invoiceSchemavalidation/createInvoiceSchema");
+
 const completePaymentSchemaValidator = require("../controllers/src/invoiceSchemavalidation/CompleteInvoiceSChema");
 const cancelPaymentSchemaValidator = require("../controllers/src/invoiceSchemavalidation/CancelInvoice");
 const GetUserInvoice = require("../controllers/src/invoiceSchemavalidation/GetUserInvoice");
 const getPendingInvoiceSchemaValidator = require("../controllers/src/invoiceSchemavalidation/CheckPendingSchema");
+const createInvoiceSchemaValidator = require("../controllers/src/invoiceSchemavalidation/createInvoiceSchemaValidator");
 
 var router = express.Router();
 
