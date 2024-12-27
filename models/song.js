@@ -6,11 +6,8 @@ const songSchema = new Schema(
     title: { type: String, required: true },
     duration: { type: String, required: true },
     popularity: { type: Number, default: 0 },
-    artistID: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Artist",
-    },
-    albumID: { type: Schema.Types.ObjectId, ref: "Album" },
+    artistID: { type: Schema.Types.ObjectId, ref: "Artist", required: true },
+    albumID: { type: Schema.Types.ObjectId, ref: "Album", required: true },
     genreID: [{ type: Schema.Types.ObjectId, ref: "Genre" }],
     coverImageURL: { type: String },
     URL: { type: String, required: true },

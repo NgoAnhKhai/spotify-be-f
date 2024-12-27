@@ -7,6 +7,7 @@ const createPlaylistSchema = Joi.object({
     .pattern(/^[0-9a-fA-F]{24}$/)
     .optional(),
   creationDate: Joi.date().optional(),
+  coverImageURL: Joi.string().uri().optional(),
 });
 
 module.exports = createPlaylistSchema;

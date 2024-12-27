@@ -6,21 +6,19 @@ const cancelSubscription = async (req, res, next) => {
     const user = await User.findById(req.user.userId);
 
     if (!user) {
-      return res
-        .status(404)
-        .json({ success: false, message: "User not found" });
+      throw new AppError(404, "User not found");
     }
 
     if (user.subscriptionType !== "Premium") {
-      return res.status(400).json({
-        success: false,
-        message: "User does not have a Premium subscription",
-      });
+      throw new AppError(400, "User does not have a Premium subscription");
     }
 
     user.subscriptionType = "Free";
     user.premiumExpiryDate = null;
     user.remainingDays = null;
+    user.remainingHours = null;
+    user.remainingMinutes = null;
+    user.remainingSeconds = null;
 
     await user.save();
 

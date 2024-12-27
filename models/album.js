@@ -5,7 +5,7 @@ const albumSchema = new Schema(
   {
     title: { type: String, required: true },
     releaseDate: { type: Date },
-    artistID: { type: Schema.Types.ObjectId, ref: "Artist" },
+    artistID: { type: Schema.Types.ObjectId, ref: "Artist", required: true },
     coverImageURL: { type: String },
     genreID: { type: Schema.Types.ObjectId, ref: "Genre" },
     listSong: [{ type: Schema.Types.ObjectId, ref: "Song" }],

@@ -1,3 +1,5 @@
+// src/controllers/user/getUserProfile.js
+
 const { AppError, sendResponse } = require("../../../helpers/utils");
 const User = require("../../../models/user");
 
@@ -5,7 +7,9 @@ const getUserProfile = async (req, res, next) => {
   try {
     const { userId } = req.user;
 
-    const user = await User.findById(userId);
+    const user = await User.findById(userId).select(
+      "username email subscriptionType premiumExpiryDate paymentDate createdAt"
+    );
 
     if (!user) {
       throw new AppError(404, "User not found", "NotFound");
@@ -32,19 +36,24 @@ const getUserProfile = async (req, res, next) => {
       remainingSeconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
     }
 
+    const userData = {
+      username: user.username,
+      email: user.email,
+      subscriptionType: user.subscriptionType,
+      paymentDate: user.paymentDate,
+      premiumExpiryDate: user.premiumExpiryDate,
+      remainingDays,
+      remainingHours,
+      remainingMinutes,
+      remainingSeconds,
+      createdAt: user.createdAt,
+    };
+
     sendResponse(
       res,
       200,
       true,
-      {
-        user: {
-          ...user.toObject(),
-          remainingDays,
-          remainingHours,
-          remainingMinutes,
-          remainingSeconds,
-        },
-      },
+      { user: userData },
       null,
       "User profile fetched successfully!"
     );

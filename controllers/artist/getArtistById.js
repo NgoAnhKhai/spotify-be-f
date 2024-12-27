@@ -4,7 +4,17 @@ const Artist = require("../../models/artist");
 const getArtistById = async (req, res, next) => {
   const id = req.params.id;
   try {
-    const artist = await Artist.findById(id).populate("songs");
+    const artist = await Artist.findById(id)
+      .populate({
+        path: "songs",
+        model: "Song",
+        populate: {
+          path: "artistID",
+          model: "Artist",
+          select: "-__v -createdAt -updatedAt",
+        },
+      })
+      .populate("albums");
     if (!artist) {
       throw new AppError("not found", 404);
     }

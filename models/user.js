@@ -19,15 +19,15 @@ const userSchema = new Schema(
     },
     premiumExpiryDate: { type: Date },
     playlists: [{ type: Schema.Types.ObjectId, ref: "Playlist" }],
-    favoriteArtists: {
-      type: [Schema.Types.ObjectId],
-      ref: "Artist",
-      default: [],
-    },
+    favoriteArtists: [{ type: Schema.Types.ObjectId, ref: "Artist" }],
     remainingDays: {
       type: Number,
       default: null,
     },
+    remainingHours: { type: Number },
+    remainingMinutes: { type: Number },
+    remainingSeconds: { type: Number },
+    paymentDate: { type: Date },
   },
   { timestamps: true }
 );

@@ -7,6 +7,7 @@ const playlistSchema = new Schema(
     userID: { type: Schema.Types.ObjectId, ref: "User", required: true },
     description: { type: String },
     songs: [{ type: Schema.Types.ObjectId, ref: "Song" }],
+    coverImageURL: { type: String, default: "" },
     creationDate: { type: Date, default: Date.now },
   },
   { timestamps: true }

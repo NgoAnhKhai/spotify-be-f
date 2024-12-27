@@ -7,22 +7,31 @@ const getAllSong = async (req, res, next) => {
     const page = parseInt(req.query.page) || 1;
     const skip = (page - 1) * limit;
 
-    const song = await Song.find()
+    const sortBy = req.query.sortBy || "createdAt";
+    const order = req.query.order === "desc" ? -1 : 1;
+
+    const validSortFields = ["createdAt", "title", "popularity"];
+    if (!validSortFields.includes(sortBy)) {
+      return sendResponse(res, 400, false, null, null, "Invalid sort field");
+    }
+
+    const songs = await Song.find()
       .populate("artistID")
+      .sort({ [sortBy]: order })
       .skip(skip)
       .limit(limit)
       .exec();
+
     const totalSong = await Song.countDocuments();
-    if (!song || song.length === 0) {
-      return sendResponse(res, 404, false, null, null, "No found");
-    }
+
     const totalPages = Math.ceil(totalSong / limit);
+
     sendResponse(
       res,
       200,
       true,
       {
-        songs: song,
+        songs,
         pagination: {
           page,
           limit,
@@ -31,10 +40,11 @@ const getAllSong = async (req, res, next) => {
         },
       },
       null,
-      "Get All Song Successfully"
+      "Get All Songs Successfully"
     );
   } catch (error) {
     next(error);
   }
 };
+
 module.exports = getAllSong;

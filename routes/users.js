@@ -12,6 +12,10 @@ const userGetProfileValidationSchema = require("../controllers/src/userSchemaVal
 const UserUpdateValidationSchema = require("../controllers/src/userSchemaValidator/UserUpdateValidationSchema");
 const UserUpdateSubValidationSchema = require("../controllers/src/userSchemaValidator/userUpdateSubValidationSchema");
 const getUserProfile = require("../controllers/user/usersManagement/getUserProfile");
+const followArtist = require("../controllers/user/usersManagement/favoriteArtist/followArtist");
+const unfollowArtist = require("../controllers/user/usersManagement/favoriteArtist/unfollowArtist");
+const getAllFavoriteArtists = require("../controllers/user/usersManagement/favoriteArtist/getAllFavoriteArtist");
+const IsFollowingArtistById = require("../controllers/user/usersManagement/favoriteArtist/IsFollowingArtistById");
 
 var router = express.Router();
 
@@ -75,10 +79,50 @@ router.put(
 );
 
 /*
- *@route GET /users/playlists
+ *@route GET /users/:id/playlists
  *@description Get The playlist of user
  *@access Login Required
  */
 router.get("/:id/playlists", authenticate(["user", "admin"]), getUserPlaylist);
+
+/*
+ *@route POST /users/follow/artistId
+ *@description POST following artists
+ *@access Login Required
+ */
+router.post("/follow/:artistId", authenticate(["user", "admin"]), followArtist);
+
+/*
+ *@route Delete /users/unfollow/artistId
+ *@description Unfollowing artists
+ *@access Login Required
+ */
+router.delete(
+  "/unfollow/:artistId",
+  authenticate(["user", "admin"]),
+  unfollowArtist
+);
+
+/*
+ *@route GET /users/favorite-artists
+ *@description Get all the artists favorite
+ *@access Login Required
+ */
+router.get(
+  "/favorite-artists",
+  authenticate(["user", "admin"]),
+  getAllFavoriteArtists
+);
+
+/*
+ *@route GET /users/following/:id
+ *@description Get all the artists favorite
+ *@access Login Required
+ */
+router.get(
+  "/follow/:artistId",
+  authenticate(["user", "admin"]),
+  IsFollowingArtistById
+);
 
 module.exports = router;

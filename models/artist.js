@@ -8,6 +8,7 @@ const artistSchema = new Schema(
       ref: "User",
     },
     name: { type: String, required: true },
+    followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     genres: [{ type: String }],
     followersCount: { type: Number, default: 0 },
     imageURL: { type: String },
@@ -17,7 +18,6 @@ const artistSchema = new Schema(
       default: "artist",
       required: true,
     },
-    followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     description: {
       startYear: { type: Number, required: true },
       difficulties: { type: String },

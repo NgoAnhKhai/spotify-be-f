@@ -1,9 +1,10 @@
 const Invoice = require("../../../models/invoice");
 const User = require("../../../models/user");
 const { sendResponse, AppError } = require("../../../helpers/utils");
+const mongoose = require("mongoose");
 
 const updateSubscription = async (req, res, next) => {
-  const { subscriptionType, premiumExpiryDate } = req.body;
+  const { subscriptionType, invoiceId } = req.body;
 
   try {
     const user = await User.findById(req.user.userId);
@@ -37,19 +38,36 @@ const updateSubscription = async (req, res, next) => {
     }
 
     if (subscriptionType === "Premium") {
-      const newInvoice = new Invoice({
-        userID: user._id,
-        amount: 15,
-        subscriptionType: "Premium",
-        paymentStatus: "Paid",
-      });
-      await newInvoice.save();
+      if (!invoiceId) {
+        throw new AppError(
+          400,
+          "invoiceId is required for Premium subscription",
+          "BadRequest"
+        );
+      }
+
+      if (!mongoose.Types.ObjectId.isValid(invoiceId)) {
+        throw new AppError(400, "Invalid invoiceId format", "BadRequest");
+      }
+
+      const invoice = await Invoice.findById(invoiceId);
+
+      if (!invoice) {
+        throw new AppError(404, "Invoice not found", "NotFound");
+      }
+
+      if (invoice.paymentStatus !== "Paid") {
+        throw new AppError(400, "Invoice is not paid", "BadRequest");
+      }
+
+      // Xác định ngày thanh toán từ invoice
+      const paymentDate = invoice.paymentDate || invoice.updatedAt;
+      const newPremiumExpiryDate = new Date(
+        paymentDate.getTime() + 30 * 24 * 60 * 60 * 1000
+      );
 
       user.subscriptionType = "Premium";
-
-      const newPremiumExpiryDate = new Date(
-        Date.now() + 30 * 24 * 60 * 60 * 1000
-      );
+      user.paymentStatus = "Paid";
       user.premiumExpiryDate = newPremiumExpiryDate;
 
       user.remainingDays = Math.ceil(

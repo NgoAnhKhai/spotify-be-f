@@ -1,5 +1,6 @@
 const { sendResponse, AppError } = require("./helpers/utils");
 require("dotenv").config();
+
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
@@ -40,6 +41,7 @@ app.use("/genres", genresRouter);
 app.use("/artists", artistRouter);
 app.use("/albums", albumsRouter);
 app.use("/authentications", authenticatetionsRouter);
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use((req, res, next) => {
   const err = new AppError(404, "Not Found");
   next(err);

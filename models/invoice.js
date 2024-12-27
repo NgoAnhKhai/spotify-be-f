@@ -22,6 +22,7 @@ const invoiceSchema = new Schema(
       default: "Pending",
     },
     premiumExpiryDate: { type: Date },
+    paymentDate: { type: Date },
     remainingDays: { type: Number },
   },
   { timestamps: true }

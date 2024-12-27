@@ -43,6 +43,7 @@ const findSongByTitleVSchema = require("../controllers/src/songSchemaValidator/f
 const deleteSongVSchema = require("../controllers/src/songSchemaValidator/deleteSongVSchema");
 const assignRoleVSchema = require("../controllers/src/userSchemaValidator/assignRoleVSchema");
 const revertToUserVSchema = require("../controllers/src/userSchemaValidator/revertTouserVSchema");
+const upload = require("../middlewares/multer.middleware");
 
 var router = express.Router();
 router.get("/dashboard", authenticate("admin"), (req, res) => {

@@ -15,6 +15,9 @@ const getPlaylistByUserIdSchema = require("../controllers/src/playlistSchemaVali
 const getPlaylistByIdVSchema = require("../controllers/src/playlistSchemaValidator/getPlaylistByIdVSchema");
 const removeSongVSchema = require("../controllers/src/songSchemaValidator/removeSongVSchema");
 const deletePlaylistVSchema = require("../controllers/src/playlistSchemaValidator/deletePlaylistVSchema");
+const upload = require("../middlewares/multer.middleware");
+const updatePlaylistVSchema = require("../controllers/src/playlistSchemaValidator/updatePlaylistVSchema");
+const updatePlaylist = require("../controllers/playlist/updatePlaylist");
 
 var router = express.Router();
 
@@ -25,6 +28,7 @@ var router = express.Router();
  */
 router.post(
   "/:id",
+  upload.single("coverImageURL"),
   validationMiddleware(createPlaylistSchema, "body"),
   authenticate(["user", "admin"]),
   createPlaylist
@@ -91,10 +95,22 @@ router.delete("/:id", authenticate(["user", "admin"]), removeSong);
  *@access login required
  */
 router.delete(
-  "/:id",
+  "/:id/delete",
   validationMiddleware(deletePlaylistVSchema, "params"),
   authenticate(["user", "admin"]),
   deletePlaylist
+);
+
+/*
+ *@route PUT /playlists/:id
+ *@description Update playlist by ID
+ *@access login required
+ */
+router.put(
+  "/:id",
+  authenticate(["user", "admin"]),
+  upload.single("coverImage"),
+  updatePlaylist
 );
 
 module.exports = router;
