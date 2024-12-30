@@ -109,7 +109,7 @@ router.delete(
 router.put(
   "/:id",
   authenticate(["user", "admin"]),
-  upload.single("image"),
+  upload.single("coverImage"),
   updatePlaylist
 );
 
