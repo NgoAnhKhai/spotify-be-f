@@ -98,6 +98,28 @@ Users
   - **Access**: Login required.
 
 ---
+## Invoice API
+
+- **POST /invoices/create**
+  - **Description**: Create a new invoice.
+  - **Access**: Login required.
+
+- **POST /invoices/complete**
+  - **Description**: Mark an invoice as completed.
+  - **Access**: Login required.
+
+- **POST /invoices/cancel**
+  - **Description**: Cancel an invoice.
+  - **Access**: Login required.
+
+- **GET /invoices/pending**
+  - **Description**: Get all pending invoices.
+  - **Access**: Login required.
+
+- **GET /invoices/users/:id**
+  - **Description**: Retrieve invoices for a specific user.
+  - **Access**: Login required.
+---
 
 ## Song API
 - **GET /songs**
