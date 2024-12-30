@@ -55,590 +55,183 @@ Users
 - i can use free with many feature
 
   🔗 API Endpoints
-<<<<<<< HEAD
-  Auth API
-  /\*
-  _@route POST /authentications/register
-  _@description register
-  _@access public
-  _/
-
-/\*
-_@route POST /authentications/login
-_@description Login
-_@access public
-_/
-
-/\*
-_@route POST /authentications/logout
-_@description Logout User
-_@access login Required
-_/
-
-User API
-/\*
-_@route GET /users/:id/profile
-_@description Get The Profile Of user
-_@access Login Required
-_/
-
-/\*
-_@route PUT /users/:id/profile
-_@description update profile user
-_@access Login Required
-_/
-
-/\*
-_@route PUT /users/:id/profile/password
-_@description Change Password
-_@access Login Required
-_/
-
-/\*
-_@route PUT /users/:id/buy
-_@description Buy Subscription
-_@access Login Required
-_/
-
-/\*
-_@route PUT /users/:id/cancel
-_@description cancel Subscription
-_@access Login Required
-_/
-
-/\*
-_@route GET /users/playlists
-_@description Get The playlist of user
-_@access Login Required
-_/
-
-song API
-/\*
-_@route GET /songs
-_@description Get all song
-_@access public
-_/
-
-/\*
-_@route GET /songs/search?title=...
-_@description search song by name
-_@access public
-_/
-
-/\*
-_@route GET /songs/:id
-_@description get song by id song
-_@access login required
-_/
-
-Playlist API
-
-- /\*
-  _@route POST /playlists/
-  _@description create playlist of user
-  _@access login required
-  _/
-=======
-   Auth API
-/*
- *@route POST /authentications/register
- *@description register
- *@access public
- */
-
-
-/*
- *@route POST /authentications/login
- *@description Login
- *@access public
- */
-
-
-/*
- *@route POST /authentications/logout
- *@description Logout User
- *@access login Required
- */
-
-
- User API
-/*
- *@route GET /users/:id/profile
- *@description Get The Profile Of user
- *@access Login Required
- */
-
-
-/*
- *@route PUT /users/:id/profile
- *@description update profile user
- *@access Login Required
- */
-
-/*
- *@route PUT /users/:id/profile/password
- *@description Change Password
- *@access Login Required
- */
-
-
-/*
- *@route PUT /users/:id/buy
- *@description Buy Subscription
- *@access Login Required
- */
-
-/*
- *@route PUT /users/:id/cancel
- *@description cancel Subscription
- *@access Login Required
- */
-
-/*
- *@route GET /users/playlists
- *@description Get The playlist of user
- *@access Login Required
- */
-
-  song API
-/*
- *@route GET /songs
- *@description Get all song
- *@access public
- */
-
-/*
- *@route GET /songs/search?title=...
- *@description search song by name
- *@access public
- */
-
-
-/*
- *@route GET /songs/:id
- *@description get song by id song
- *@access login required
- */
->>>>>>> 0ae8a3c59cc568748f160f78410c9139c11eae93
-
-/\*
-_@route POST /playlists/:id/add
-_@description add song to playlist
-_@access login required
-_/
-
-<<<<<<< HEAD
-/\*
-_@route GET /playlists/
-_@description Get all playlist
-_@access login required
-_/
-
-/\*
-_@route GET /playlists/user/:userID
-_@description get playlist by userID
-_@access login required
-_/
-
-/\*
-_@route GET /playlists/:id
-_@description Get playlist by playlist id
-_@access login required
-_/
-
-/\*
-_@route delete /playlists/remove/:id
-_@description remove song from playlist
-_@access login required
-_/
-
-/\*
-_@route DELETE /playlists/:id
-_@description delete playlist of user
-_@access login required
-_/
-
-Artist API
-/\*
-_@route GET /artists/
-_@description get all artist
-_@access login required
-_/
-
-/\*
-_@route GET /artists/:id
-_@description get Artist By ID
-_@access login required
-_/
-
-Albums API
-
-/\*
-_@route GET /albums/:id
-_@description get album by id album
-_@access login required
-_/
-
-/\*
-_@route GET /albums/artist/:artistID
-_@description get Album by artistID
-_@access login required
-_/
-
-/\*
-_@route GET /albums/
-_@description get all Album
-_@access public
-_/
-
-Admin API
-
-/\*
-_@route GET admin/users
-_@description Get List All User(For Admin)
-_@access private
-_/
-
-/\*
-_@route GET admin/users/find
-_@description Find User(For Admin)
-_@access private
-_/
-
-/\*
-_@route GET admin/users
-_@description Get List All User(For Admin)
-_@access private
-_/
-
-/\*
-_@route POST admin/artists
-_@description create artist
-_@access private
-_/
-
-/\*
-_@route PUT admin/artists/:id
-_@description update Information Of Artist
-_@access private
-_/
-
-/\*
-_@route GET admin/artists/find
-_@description find Information Of Artist by name
-_@access private
-_/
-
-/\*
-_@route DELETE admin/artists/:id
-_@description DELETE artist
-_@access private
-_/
-
-/\*
-_@route POST /admin/albums
-_@description create Album
-_@access login required
-_/
-
-/\*
-_@route PUT admin/albums/:id
-_@description update Album by id
-_@access login required
-_/
-
-/\*
-_@route GET admin/albums/find
-_@description find album by name
-_@access login required
-_/
-
-/\*
-_@route DELETE album/albums/:id
-_@description delete album by id album
-_@access login required
-_/
-
-/\*
-_@route POST admin/genres
-_@description create genre
-_@access private
-_/
-
-/\*
-_@route PUT admin/genres/:id
-_@description update genre by id
-_@access private
-_/
-
-/\*
-_@route GET admin/genres/find
-_@description find genre by name
-_@access private
-_/
-
-/\*
-_@route DELETE admin/genres/:id
-_@description delete genre
-_@access private
-_/
-
-/\*
-_@route POST admin/songs
-_@description create song
-_@access private
-_/
-
-/\*
-_@route PUT admin/songs/:id
-_@description update Song
-_@access private
-_/
-
-/\*
-_@route GET admin/songs/find
-_@description find Song by title
-_@access private
-_/
-
-/\*
-_@route DELETE admin/songs/delete/:id
-_@description delete song
-_@access private
-_/
-
-/\*
-_@route PUT admin/assign-role
-_@description Assign role for user(For Admin)
-_@access private
-_/
-
-/\*
-_@route PUT admin/assign-role
-_@description Assign role for user(For Admin)
-_@access private
-_/
-=======
-  Playlist API
-- 
-/*
- *@route POST /playlists/
- *@description create playlist of user
- *@access login required
- */
-
-/*
- *@route POST /playlists/:id/add
- *@description add song to playlist
- *@access login required
- */
-
-
-/*
- *@route GET /playlists/
- *@description Get all playlist
- *@access login required
- */
-
-
-/*
- *@route GET /playlists/user/:userID
- *@description get playlist by userID
- *@access login required
- */
-
-/*
- *@route GET /playlists/:id
- *@description Get playlist by playlist id
- *@access login required
- */
-
-
-/*
- *@route delete /playlists/remove/:id
- *@description remove song from playlist
- *@access login required
- */
-
-/*
- *@route DELETE /playlists/:id
- *@description delete playlist of user
- *@access login required
- */
- 
-  Artist API
-/*
- *@route GET /artists/
- *@description get all artist
- *@access login required
- */
-
-
-/*
- *@route GET /artists/:id
- *@description get Artist By ID
- *@access login required
- */
-
-  Albums API
-
-/*
- *@route GET /albums/:id
- *@description get album by id album
- *@access login required
- */
-
-/*
- *@route GET /albums/artist/:artistID
- *@description get Album by artistID
- *@access login required
- */
-
-
-/*
- *@route GET /albums/
- *@description get all Album
- *@access public
- */
-
-   Admin API
-
-/*
- *@route GET admin/users
- *@description Get List All User(For Admin)
- *@access private
- */
-
-/*
- *@route GET admin/users/find
- *@description Find User(For Admin)
- *@access private
- */
-
-
-/*
- *@route GET admin/users
- *@description Get List All User(For Admin)
- *@access private
- */
-
-/*
- *@route POST admin/artists
- *@description create artist
- *@access private
- */
-
-
-/*
- *@route PUT admin/artists/:id
- *@description update Information Of Artist
- *@access private
- */
-
-
-/*
- *@route GET admin/artists/find
- *@description find Information Of Artist by name
- *@access private
- */
-
-/*
- *@route DELETE admin/artists/:id
- *@description DELETE artist
- *@access private
- */
-
-
-/*
- *@route POST /admin/albums
- *@description create Album
- *@access login required
- */
-
-/*
- *@route PUT admin/albums/:id
- *@description update Album by id
- *@access login required
- */
-
-/*
- *@route GET admin/albums/find
- *@description find album by name
- *@access login required
- */
-
-
-/*
- *@route DELETE album/albums/:id
- *@description delete album by id album
- *@access login required
- */
-
-
-/*
- *@route POST admin/genres
- *@description create genre
- *@access private
- */
-
-/*
- *@route PUT admin/genres/:id
- *@description update genre by id
- *@access private
- */
-
-
-/*
- *@route GET admin/genres/find
- *@description find genre by name
- *@access private
- */
-
-
-/*
- *@route DELETE admin/genres/:id
- *@description delete genre
- *@access private
- */
-
-
-/*
- *@route POST admin/songs
- *@description create song
- *@access private
- */
-
-/*
- *@route PUT admin/songs/:id
- *@description update Song
- *@access private
- */
-
-/*
- *@route GET admin/songs/find
- *@description find Song by title
- *@access private
- */
-
-
-/*
- *@route DELETE admin/songs/delete/:id
- *@description delete song
- *@access private
- */
-
-/*
- *@route PUT admin/assign-role
- *@description Assign role for user(For Admin)
- *@access private
- */
-
-
-/*
- *@route PUT admin/assign-role
- *@description Assign role for user(For Admin)
- *@access private
- */
+# API Documentation
+
+## Auth API
+- **POST /authentications/register**
+  - **Description**: Register a new user.
+  - **Access**: Public.
+
+- **POST /authentications/login**
+  - **Description**: Login to the application.
+  - **Access**: Public.
+
+- **POST /authentications/logout**
+  - **Description**: Logout the current user.
+  - **Access**: Login required.
+
+---
+
+## User API
+- **GET /users/:id/profile**
+  - **Description**: Get the profile information of a user.
+  - **Access**: Login required.
+
+- **PUT /users/:id/profile**
+  - **Description**: Update the profile information of a user.
+  - **Access**: Login required.
+
+- **PUT /users/:id/profile/password**
+  - **Description**: Change the password of a user.
+  - **Access**: Login required.
+
+- **PUT /users/:id/buy**
+  - **Description**: Purchase a subscription.
+  - **Access**: Login required.
+
+- **PUT /users/:id/cancel**
+  - **Description**: Cancel a subscription.
+  - **Access**: Login required.
+
+- **GET /users/playlists**
+  - **Description**: Retrieve playlists of the current user.
+  - **Access**: Login required.
+
+---
+
+## Song API
+- **GET /songs**
+  - **Description**: Retrieve all songs.
+  - **Access**: Public.
+
+- **GET /songs/search?title=...**
+  - **Description**: Search for songs by title.
+  - **Access**: Public.
+
+- **GET /songs/:id**
+  - **Description**: Get details of a specific song.
+  - **Access**: Login required.
+
+---
+
+## Playlist API
+- **POST /playlists/**
+  - **Description**: Create a new playlist.
+  - **Access**: Login required.
+
+- **POST /playlists/:id/add**
+  - **Description**: Add a song to a playlist.
+  - **Access**: Login required.
+
+- **GET /playlists/**
+  - **Description**: Retrieve all playlists.
+  - **Access**: Login required.
+
+- **GET /playlists/user/:userID**
+  - **Description**: Retrieve playlists created by a specific user.
+  - **Access**: Login required.
+
+- **GET /playlists/:id**
+  - **Description**: Get details of a specific playlist.
+  - **Access**: Login required.
+
+- **DELETE /playlists/remove/:id**
+  - **Description**: Remove a song from a playlist.
+  - **Access**: Login required.
+
+- **DELETE /playlists/:id**
+  - **Description**: Delete a specific playlist.
+  - **Access**: Login required.
+
+---
+
+## Artist API
+- **GET /artists/**
+  - **Description**: Retrieve all artists.
+  - **Access**: Login required.
+
+- **GET /artists/:id**
+  - **Description**: Get details of a specific artist.
+  - **Access**: Login required.
+
+---
+
+## Albums API
+- **GET /albums/:id**
+  - **Description**: Get details of a specific album.
+  - **Access**: Login required.
+
+- **GET /albums/artist/:artistID**
+  - **Description**: Retrieve albums of a specific artist.
+  - **Access**: Login required.
+
+- **GET /albums/**
+  - **Description**: Retrieve all albums.
+  - **Access**: Public.
+
+---
+
+## Admin API
+- **GET /admin/users**
+  - **Description**: Retrieve a list of all users (Admin only).
+  - **Access**: Private.
+
+- **GET /admin/users/find**
+  - **Description**: Search for a user (Admin only).
+  - **Access**: Private.
+
+- **POST /admin/artists**
+  - **Description**: Create a new artist (Admin only).
+  - **Access**: Private.
+
+- **PUT /admin/artists/:id**
+  - **Description**: Update an artist's information (Admin only).
+  - **Access**: Private.
+
+- **DELETE /admin/artists/:id**
+  - **Description**: Delete an artist (Admin only).
+  - **Access**: Private.
+
+- **POST /admin/albums**
+  - **Description**: Create a new album (Admin only).
+  - **Access**: Login required.
+
+- **PUT /admin/albums/:id**
+  - **Description**: Update album details (Admin only).
+  - **Access**: Login required.
+
+- **DELETE /admin/albums/:id**
+  - **Description**: Delete an album (Admin only).
+  - **Access**: Login required.
+
+- **POST /admin/genres**
+  - **Description**: Create a new genre (Admin only).
+  - **Access**: Private.
+
+- **PUT /admin/genres/:id**
+  - **Description**: Update genre details (Admin only).
+  - **Access**: Private.
+
+- **DELETE /admin/genres/:id**
+  - **Description**: Delete a genre (Admin only).
+  - **Access**: Private.
+
+- **POST /admin/songs**
+  - **Description**: Create a new song (Admin only).
+  - **Access**: Private.
+
+- **PUT /admin/songs/:id**
+  - **Description**: Update song details (Admin only).
+  - **Access**: Private.
+
+- **DELETE /admin/songs/delete/:id**
+  - **Description**: Delete a song (Admin only).
+  - **Access**: Private.
+
+- **PUT /admin/assign-role**
+  - **Description**: Assign roles to a user (Admin only).
+  - **Access**: Private.
+
 
 
 📚 Learnings
@@ -656,4 +249,5 @@ Tích hợp AI để gợi ý bài hát theo sở thích cá nhân.
 Cải thiện giao diện người dùng.
 Tích hợp thanh toán trực tuyến.
 
-![image](https://github.com/user-attachments/assets/f79609c0-518f-479d-b90b-6edffcbcf86d)
+![image](https://github.com/user-attachments/assets/31ce6fc1-cc27-463e-9a1a-bab807c05b2d)
+
