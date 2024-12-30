@@ -640,9 +640,9 @@ _/
  *@access private
  */
 
->>>>>>> 0ae8a3c59cc568748f160f78410c9139c11eae93
+
 📚 Learnings
->>>>>>> Frontend:
+Frontend:
 Xử lý giao diện người dùng với React và Material-UI.
 Backend:
 Xây dựng RESTful APIs với Node.js và Express.
@@ -651,7 +651,7 @@ Authentication:
 Sử dụng JWT để bảo mật phiên đăng nhập.
 Storage:
 Tích hợp Cloudinary để quản lý hình ảnh và media.
->>>>>>>  Future Enhancements
+Future Enhancements
 Tích hợp AI để gợi ý bài hát theo sở thích cá nhân.
 Cải thiện giao diện người dùng.
 Tích hợp thanh toán trực tuyến.
