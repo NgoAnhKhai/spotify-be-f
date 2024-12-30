@@ -1,8 +1,8 @@
 The Project Title
 
-- Spotify Mini Clone
+🎵 Spotify Mini Clone
 
-STARTUP GUIDE
+🚀 Startup Guide
 <<<<<<< HEAD
 
 =======
@@ -17,19 +17,18 @@ STARTUP GUIDE
 =======
   
 >>>>>>> 0ae8a3c59cc568748f160f78410c9139c11eae93
-The Project Description
+📜 Project Description
 
 - Solved the main problem of listening to music, searching for music and looking up artist information
 - The hardest thing for me to complete was mostly the FrontEnd, and the functions that took more time like invoices, specific artist information and many more
 - In the future I may develop it and integrate AI into it
 
-User Stories
+✨ Features
 Spotify Clone is a place that allows you to listen to music online for free without having to spend a lot of effort searching and searching online. You can also find the song you like with just 1 click and the artist's information will also appear for you.
 Integrated in that is the purchase of premium to enhance the user experience
 Listen to exciting music with the feature of returning to the first song every time it ends without having to click again
 
-Authentication
-
+👥 Authentication
 - As a user, I can sign in with my email and password.
 - As a user, I can register for a new account with email and password.
 - As a user, I can stay signed in after refreshing the page.
@@ -46,16 +45,16 @@ Authentication
 Users
 
 - As a user, I can see a list of other song so that i can see anh click one of the song to hear
+- As a user, I can edit my own playlist like picture, name
 - As a user, I can see my current profile info.
 - As a user, I can see a specific artist with them info.
 - As a user, I can update my profile with password, email and username
 
-Subscription Type
-
+💳 Subscription Types
 - As a user, i can buy i premium for better experience
 - i can use free with many feature
 
-  API endpoints
+  🔗 API Endpoints
 <<<<<<< HEAD
   Auth API
   /\*
@@ -642,5 +641,19 @@ _/
  */
 
 >>>>>>> 0ae8a3c59cc568748f160f78410c9139c11eae93
+📚 Learnings
+>>>>>>> Frontend:
+Xử lý giao diện người dùng với React và Material-UI.
+Backend:
+Xây dựng RESTful APIs với Node.js và Express.
+Quản lý cơ sở dữ liệu với MongoDB.
+Authentication:
+Sử dụng JWT để bảo mật phiên đăng nhập.
+Storage:
+Tích hợp Cloudinary để quản lý hình ảnh và media.
+>>>>>>>  Future Enhancements
+Tích hợp AI để gợi ý bài hát theo sở thích cá nhân.
+Cải thiện giao diện người dùng.
+Tích hợp thanh toán trực tuyến.
 
 ![image](https://github.com/user-attachments/assets/f79609c0-518f-479d-b90b-6edffcbcf86d)
