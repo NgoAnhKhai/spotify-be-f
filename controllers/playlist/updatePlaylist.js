@@ -17,8 +17,8 @@ const updatePlaylist = async (req, res, next) => {
     if (description) playlist.description = description;
     if (songs) playlist.songs = JSON.parse(songs);
 
-    if (req.file) {
-      playlist.coverImageURL = `/uploads/${req.file.filename}`;
+    if (req.file && req.file.path) {
+      playlist.coverImageURL = req.file.path;
     }
 
     await playlist.save();
