@@ -1,60 +1,57 @@
-The Project Title
+### 🎵 Spotify Mini Clone
 
-🎵 Spotify Mini Clone
+---
 
-🚀 Startup Guide
-<<<<<<< HEAD
+## 🚀 Startup Guide
 
-=======
->>>>>>> 0ae8a3c59cc568748f160f78410c9139c11eae93
-- Clone Repo
-- Npm run dev
-- Register And Login to use feature
-- If You a admin ( Login with account Admin: admin@gmail.com | password: Admin@123)
-- Enjoy
-<<<<<<< HEAD
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Start the server using `npm run dev`.
+4. Register and log in to use features.
+5. For admin access, use the following credentials:
+   - **Email**: `admin@gmail.com`
+   - **Password**: `Admin@123`.
+6. Enjoy!
 
-=======
+---
   
->>>>>>> 0ae8a3c59cc568748f160f78410c9139c11eae93
-📜 Project Description
+## 📜 Project Description
 
-- Solved the main problem of listening to music, searching for music and looking up artist information
-- The hardest thing for me to complete was mostly the FrontEnd, and the functions that took more time like invoices, specific artist information and many more
-- In the future I may develop it and integrate AI into it
+Spotify Mini Clone solves the problem of finding and listening to music easily. Users can search for songs, view artist details, and manage playlists seamlessly. The platform aims to deliver a premium listening experience with additional features like subscription plans.
 
-✨ Features
-Spotify Clone is a place that allows you to listen to music online for free without having to spend a lot of effort searching and searching online. You can also find the song you like with just 1 click and the artist's information will also appear for you.
-Integrated in that is the purchase of premium to enhance the user experience
-Listen to exciting music with the feature of returning to the first song every time it ends without having to click again
+---
 
-👥 Authentication
-- As a user, I can sign in with my email and password.
-- As a user, I can register for a new account with email and password.
-- As a user, I can stay signed in after refreshing the page.
 
-  Admin
-<<<<<<< HEAD
+## ✨ Features
 
-=======
->>>>>>> 0ae8a3c59cc568748f160f78410c9139c11eae93
-- As a admin, I can update profile anyone, email and username
-- As a admin, I can delete all any users, aritst, genres, songs or albums
-- As a admin, I can find name of user, artist, genre, song or album to update
+- **Stream Music**: Listen to songs online for free.
+- **Search Songs**: Quickly find songs by title.
+- **Artist Information**: Explore detailed profiles of artists.
+- **Playlist Management**: Create, edit, and manage playlists.
+- **Premium Experience**: Unlock additional features with a subscription.
+- **Replay Feature**: Automatically restart a song when it ends.
 
-Users
+---
 
-- As a user, I can see a list of other song so that i can see anh click one of the song to hear
-- As a user, I can edit my own playlist like picture, name
-- As a user, I can see my current profile info.
-- As a user, I can see a specific artist with them info.
-- As a user, I can update my profile with password, email and username
 
-💳 Subscription Types
-- As a user, i can buy i premium for better experience
-- i can use free with many feature
+## 👥 Authentication
 
-  🔗 API Endpoints
+- **User**:
+  - Sign in with email and password.
+  - Register for a new account.
+  - Stay signed in after refreshing the page.
+- **Admin**:
+  - Update user profiles, email, and username.
+  - Delete users, artists, genres, songs, and albums.
+  - Search and update specific records by name.
+
+---
+## 💳 Subscription Types
+
+- **Free Tier**: Access most features with some limitations.
+- **Premium Tier**: Enhance your experience with exclusive features.
+
+---
 # API Documentation
 
 ## Auth API
