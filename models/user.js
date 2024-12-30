@@ -24,10 +24,6 @@ const userSchema = new Schema(
       type: Number,
       default: null,
     },
-    remainingHours: { type: Number },
-    remainingMinutes: { type: Number },
-    remainingSeconds: { type: Number },
-    paymentDate: { type: Date },
   },
   { timestamps: true }
 );

@@ -3,8 +3,8 @@ const User = require("../../../../models/user");
 
 const getAllFavoriteArtists = async (req, res, next) => {
   try {
-    const page = parseInt(req.query.page, 10) || 1;
-    const limit = parseInt(req.query.limit, 10) || 4;
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 4;
     const skip = (page - 1) * limit;
 
     const { userId } = req.user;
